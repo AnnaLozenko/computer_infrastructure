@@ -1,12 +1,3 @@
-ipython
-numpy
-scipi
-statsmodels
+pandas
 yfinance
 matplotlib
-pandas
-seaborn
-sympy
-nose
-scikit-learn
-qiskit
