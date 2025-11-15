@@ -1,0 +1,22 @@
+name: FAANG Data Fetch and Plot
+on:
+  schedule:
+    - cron: '0 9 * * 6'  # Runs every Saturday at 9:00 AM UTC
+  workflow_dispatch:      # can be run manually as well
+jobs:
+  run-faang-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository 
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt # pip install ensures all packages are installed (including yfinance)
+
+      - name: Run FAANG script
+        run: python faang.py
