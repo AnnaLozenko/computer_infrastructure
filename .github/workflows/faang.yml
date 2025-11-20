@@ -32,6 +32,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "Update FAANG data and plots [automated]"
-          file_pattern: |
-            data/*.csv
-            plots/*.png
+          file_pattern: 'data/*.csv plots/*.png'
