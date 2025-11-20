@@ -1,4 +1,8 @@
 name: FAANG Data Fetch and Plot
+
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: '0 9 * * 6'  # Runs every Saturday at 9:00 AM UTC
@@ -20,10 +24,12 @@ jobs:
 
       - name: Run FAANG script
         run: python faang.py
+
+      - name: List files for debugging
+        run: ls -R .
+
       - name: Commit and push results
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "Update FAANG data and plots [automated]"
-          file_pattern: |
-            data/*.csv
-            plots/*.png
+          file_pattern: 'data/*.csv plots/*.png'
