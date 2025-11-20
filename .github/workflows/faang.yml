@@ -24,6 +24,10 @@ jobs:
 
       - name: Run FAANG script
         run: python faang.py
+
+      - name: List files for debugging
+        run: ls -R .
+
       - name: Commit and push results
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
