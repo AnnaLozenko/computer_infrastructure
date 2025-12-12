@@ -65,7 +65,7 @@ def plot_data():
     # Improve layout so the legend doesn't get cut off
     plt.tight_layout()
 
-    # save plot to plots folder
+    # Save plot to plots folder
     now = dt.datetime.now().strftime("%Y%m%d-%H%M%S")
     plt.savefig("plots/" + now + ".png")
 
