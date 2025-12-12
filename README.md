@@ -34,7 +34,7 @@ The project was created as part of Computer Infrastructure assessment and includ
 ## Overview
 This project retrieves hourly stock price data for the last 5 days using the [yfinance](https://ranaroussi.github.io/yfinance/) package for the following FAANG companies:
 
--META (formerly Facebook)
+-META (Meta, formerly Facebook)
 
 -AAPL (Apple)
 
@@ -42,7 +42,7 @@ This project retrieves hourly stock price data for the last 5 days using the [yf
 
 -NFLX (Netflix)
 
--GOOG (Google)
+-GOOG (Alphabet, formerly Google)
 
 The script processes and visualizes the Close prices on a single plot, then saves both the CSV data and PNG plot using timestamped filenames.
 A GitHub Actions workflow (faang.yml) is included to run the script automatically every Saturday morning at 9:00 AM UTC.
@@ -54,7 +54,7 @@ The script defines a function
 
 ## Plotting - ```plot_data()```
 
-The script also defines a function ```plot_data(tickers, data_folder, plot_folder)``` that reads the downloaded CSV files from the 'data' folder, extracts the Close prices, and generates a line plot showing the stock prices over time for all FAANG companies. The plot is saved as a PNG file in the 'plots' folder with a timestamped filename (```faang_prices_YYYYMMDD-HHmmss.png```).
+The script also defines a function ```plot_data()``` that reads the downloaded CSV files from the 'data' folder, extracts the Close prices, and generates a line plot showing the stock prices over time for all FAANG companies. The plot is saved as a PNG file in the 'plots' folder with a timestamped filename (```YYYYMMDD-HHmmss.png```).
 
 ## Automation with GitHub Actions
 
