@@ -1,21 +1,29 @@
 #!/usr/bin/env python3
 
-# Import pandas
+# pandas is a powerful data analysis and manipulation library for Python.
 import pandas as pd
-# Import yfinance package
+# yfinance is set of tools to download market data from Yahoo Finance.
 import yfinance as yf
-# Import datetime
+# datetime module supplies classes for manipulating dates and times.
 import datetime as dt
-# Import os
+# os module provides a way of using operating system dependent functionality.
 import os
-# Import matplotlib
+# matplotlib is a comprehensive library for creating visualizations in Python.
 import matplotlib.pyplot as plt
-# Import seaborn
+# seaborn is a Python data visualization library based on matplotlib
 import seaborn as sns
 
-# Define function get_data()
-# Default parameters for start, end, interval
 def get_data(tickers, start = dt.datetime.now() - dt.timedelta(days=5), end = dt.datetime.now(), interval = "1h"):
+    """
+    Download historical market data for the given tickers and save to CSV.
+    The CSV file is saved in the 'data' folder with a timestamped filename.
+
+    :param tickers: List containing one or more ticker symbols supported by yfinance.
+    :param start: Start datetime for the historical data. Defaults to 5 days ago.
+    :param end: End datetime for the historical data. Defaults to now.
+    :param interval: Data sampling interval (e.g. '1m', '1h', '1d'). Defaults to '1h'.
+    :return: None.
+    """
     # Retrieve historical stock data using yfinance
     data = yf.download(tickers, start=start, end=end, interval=interval, auto_adjust=True)
     # Get current timestamp for filename
@@ -29,6 +37,11 @@ get_data(['META', 'AAPL', 'AMZN', 'NFLX' , 'GOOG'])
 
 # Define function plot_data()
 def plot_data():
+    """
+    Load the latest CSV file from the 'data' folder, plot the Close prices for each stock.
+    Save the plot to the 'plots' folder with a timestamped filename.
+    :return: None
+    """
     # Retrieve all csv files in data folder
     list_of_files = os.listdir("data/")
     # Sort files by modification time, newest first
