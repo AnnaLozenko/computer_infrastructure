@@ -1,6 +1,6 @@
 # FAANG Stock Data Analysis and Automation
 
-This repository demonstrates a complete automated workflow for retrieving, analysing, and visualising FAANG stock data using Python. The project combines data acquisition, processing, visualisation, scripting, and cloud-based automation to create a reproducible data pipeline.
+This repository demonstrates a complete automated workflow for retrieving, processing, and visualising FAANG stock data using Python. The project combines data acquisition, processing, visualisation, scripting, and cloud-based automation to create a reproducible data pipeline.
 
 The project was created as part of Computer Infrastructure assessment and includes the solution to the following tasks:
 
@@ -61,7 +61,7 @@ The script defines a function
 
 ## Plotting - ```plot_data()```
 
-The script also defines a function `plot_data()` that reads the most recent CSV file from the `data/` folder, extracts the Close prices, and generates a line plot showing the stock prices over time for all FAANG companies. The plot is saved as a PNG file in the `plots/` folder with a timestamped filename (YYYYMMDD-HHmmss.png).  
+The script also defines a function `plot_data()` that reads the most recent CSV file from the `data/` folder, extracts the Close prices, and generates a line plot showing the stock prices over time for all FAANG companies. The plot is saved as a PNG file in the `plots/` folder with a timestamped filename (`YYYYMMDD-HHmmss.png`).  
 
 ## Automation with GitHub Actions
 
@@ -69,7 +69,7 @@ A GitHub Actions workflow (`faang.yml`) is set up to automate the execution of t
 
 ## Requirements
 
-The project requires the following Python packages, which are listed in the requirements.txt file:
+The project requires the following Python packages, which are listed in the `requirements.txt` file:
 - yfinance
 - pandas
 - matplotlib
@@ -92,14 +92,14 @@ To run the script manually, execute the following command in your terminal:
 ``` 
 python faang.py
 ```
-This will download the latest FAANG stock data, generate the plot, and save the files in the respective folders. If the data and plots folders do not exist, they must be created beforehand.
+This will download the latest FAANG stock data, generate the plot, and save the files in the respective folders. If the `data/` and `plots/` folders do not exist, they must be created beforehand.
 
 ### Automated Execution
 
 The GitHub Actions workflow will automatically execute the script every Saturday at 9:00 AM UTC.  
 
 ## Jupyter Notebook
-The [problems.ipynb]() notebook contains the same code as in the `faang.py` script, along with detailed explanations of each step, the workflow description, and insights into the data pipeline process. It is intended to meet the assessment’s requirement for explanation and narrative.  
+The [problems.ipynb]() notebook contains the same code as in the `faang.py` script, along with detailed explanations of each step, the workflow description, and insights into the data pipeline process. 
 
 
 
